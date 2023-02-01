@@ -19,15 +19,5 @@ workflows:
   run-npm-command:
     jobs:
       - node/run:
-          npm-run: build
-  test-and-deploy:
-    jobs:
-      - node/test
-      - heroku/deploy-via-git:
-          filters:
-            branches:
-              only:
-                - master
-          requires:
-            - node/test          
+          npm-run: build       
     
